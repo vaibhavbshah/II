@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="form-group">
+        <form (submit)="OnSave()">
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="customer.firstName" required #firstName="ngModel">
+            <div class="text-danger" *ngIf="firstName.touched && firstName.invalid && firstName.errors.required"  >First Name is required!</div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="customer.lastName" required #lastName="ngModel">
+            <div class="text-danger" *ngIf="lastName.touched && lastName.invalid && lastName.errors.required"  >Last Name is required!</div>
+          </div>
+          <div class="form-group">
+            <label for="userName">User Name:</label>
+            <input type="text" class="form-control" name="userName" [(ngModel)]="customer.userName" required #userName="ngModel">
+            <div class="text-danger" *ngIf="customer.touched && customer.invalid && customer.errors.required"  >User Name is required!</div>
+          </div>
+          <div class="form-group">
+            <label for="passWord">Password:</label>
+            <input type="password" class="form-control" name="passWord" [(ngModel)]="customer.passWord" required #passWord="ngModel">
+            <div class="text-danger" *ngIf="customer.touched && customer.invalid && customer.errors.required"  >Password is required!</div>
+          </div>
+          <div class="form-group">
+              <input type="submit" class="btn btn-success" value="Save">
+            </div>
+            
+        </form>
+     </div>
+    </div>
+
